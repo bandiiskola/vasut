@@ -1,8 +1,10 @@
 const allomasok=['Nyugati','Zugló','Kőbánya-Kispest','Ferihegy','Vecsés','Üllő','Monor','Monorierdő','Pilis','Albertirsa','Ceglédbercel','Cegléd','Abony','Szolnok','Szajol','Törökszentmiklós','Fegyvernek-Örményes','Kisújszállás'];
 
 
-function ElotteUtana(megallo){
-    var p=allomasok.indexOf(megallo);
+function ElotteUtana(megallo)
+{
+    var p=allomasok.indexOf(megallo =>
+        megallo.toLowerCase()==item.toLowerCase());
     var r="";
     if  (p==-1){
         r="Nincs ilyen megálló ezen a vonalon"
@@ -11,6 +13,9 @@ function ElotteUtana(megallo){
         if(p!=0){
             r+="Előtte: "+allomasok[p-1];
             
+        }
+        else{
+            r+="Elötte: ----"
         }
 
         r+="<br>"
@@ -24,7 +29,8 @@ function ElotteUtana(megallo){
     return r;
 }
 
-function Keres(){
-    var anev=document.getElementById("allomasnev").value;
-    document.getElementById("eredmeny").innerHTML=ElotteUtana(anev);
+function Keres()
+{
+    var anev=document.getElementById("allomasnev").value.toLowerCase();
+    document.getElementById("eredmeny").innerHTML=ElotteUtana(anev)
 }
