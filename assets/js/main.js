@@ -1,9 +1,7 @@
 const allomasok=['Nyugati','Zugló','Kőbánya-Kispest','Ferihegy','Vecsés','Üllő','Monor','Monorierdő','Pilis','Albertirsa','Ceglédbercel','Cegléd','Abony','Szolnok','Szajol','Törökszentmiklós','Fegyvernek-Örményes','Kisújszállás'];
 
-
-function ElotteUtana(megallo)
-{
-    var p=allomasok.indexOf(megallo =>
+function ElotteUtana(megallo){
+    var p=allomasok.findIndex(item =>
         megallo.toLowerCase()==item.toLowerCase());
     var r="";
     if  (p==-1){
@@ -26,11 +24,49 @@ function ElotteUtana(megallo)
             r+="Utána: "+allomasok[p+1];
         }
     }
+    var x=(p/allomasok.length)*100
+    console.log(x)
+    var y;
+    if(allomasok[p]==undefined)
+    {
+        var y=""
+    }
+    else
+    {
+        var y=allomasok[p]
+    }
+    document.getElementById("myProgress").style.display="inline-block"
+    document.getElementById("myBar").style.display="inline-block"
+    move(x,y)
     return r;
 }
 
-function Keres()
-{
+function Keres(){
     var anev=document.getElementById("allomasnev").value.toLowerCase();
-    document.getElementById("eredmeny").innerHTML=ElotteUtana(anev)
+    document.getElementById("eredmeny").innerHTML=ElotteUtana(anev);
+    document.getElementById("elso").innerHTML=allomasok[0];
+    document.getElementById("utolso").innerHTML=allomasok[allomasok.length-1];   
+}
+
+var i = 0;
+function move(x,y) {
+  if (i == 0) {
+    i = 1;
+    var elem = document.getElementById("myBar");
+    var width = 0;
+    elem.style.width = width + "%";
+    elem.innerHTML = y ;
+    
+    var id = setInterval(frame, 10);
+    function frame() {
+      if (width >= x) {
+        clearInterval(id);
+        i = 0;
+      } else {
+        width++;
+        elem.style.width = width + "%";
+        elem.innerHTML = y;
+      }
+    }
+  }
 }

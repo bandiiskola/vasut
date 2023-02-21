@@ -1,0 +1,35 @@
+#myBar {
+    width: 10%;
+    height: 30px;
+    background-color: #04AA6D;
+    text-align: center; /* To center it horizontally (if you want) */
+    line-height: 30px; /* To center it vertically */
+    color: white;
+}
+  #myProgress {
+    width: 75%;
+    background-color: grey;
+    margin: 0 auto;
+    display: none;
+}
+  
+  #myBar {
+    width: 1%;
+    height: 30px;
+    background-color: green;
+    display: none;
+}
+
+  #elso,#utolso{
+    display: inline-block;
+}
+  
+#mittom{
+    width: 75%;
+    margin: 0 auto;
+    display: block;
+}
+
+#utolso{
+    margin-left: 0.5em;
+}
