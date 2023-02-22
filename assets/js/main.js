@@ -24,7 +24,7 @@ function ElotteUtana(megallo){
             r+="Utána: "+allomasok[p+1];
         }
     }
-    var x=(p/allomasok.length)*100
+    var x=(p/(allomasok.length-1))*100
     console.log(x)
     var y;
     if(allomasok[p]==undefined)
@@ -44,8 +44,8 @@ function ElotteUtana(megallo){
 function Keres(){
     var anev=document.getElementById("allomasnev").value.toLowerCase();
     document.getElementById("eredmeny").innerHTML=ElotteUtana(anev);
-    document.getElementById("elso").innerHTML=allomasok[0];
-    document.getElementById("utolso").innerHTML=allomasok[allomasok.length-1];   
+    document.getElementById("elso").innerHTML="<div id=tabla>"+allomasok[0]+"</div>";
+    document.getElementById("utolso").innerHTML="<div id=tabla>"+allomasok[allomasok.length-1]+"</div>";   
 }
 
 var i = 0;
@@ -65,7 +65,7 @@ function move(x,y) {
       } else {
         width++;
         elem.style.width = width + "%";
-        elem.innerHTML = y;
+        elem.innerHTML = "<img src='assets/images/vonat.png' id='kep'>";
       }
     }
   }

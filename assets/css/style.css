@@ -1,35 +1,53 @@
-#myBar {
-    width: 10%;
-    height: 30px;
-    background-color: #04AA6D;
-    text-align: center; /* To center it horizontally (if you want) */
-    line-height: 30px; /* To center it vertically */
-    color: white;
-}
-  #myProgress {
-    width: 75%;
-    background-color: grey;
-    margin: 0 auto;
-    display: none;
-}
-  
-  #myBar {
-    width: 1%;
-    height: 30px;
-    background-color: green;
-    display: none;
+body {
+  font-family:sans-serif ;
 }
 
-  #elso,#utolso{
-    display: inline-block;
+#myBar {
+    width: 10%;
+    height: 100px;
+    background-color: white;
+    line-height: 30px;
+    color: white;
+    display: none;
+    text-align: right;
+    margin: 0 auto;
+    display: none;
+    transition: 3s;
+}
+
+  #myProgress {
+    width: 75%;
+    background-color: white;
+    margin: 0 auto;
+    display: none;
+    border-bottom:dashed brown 2px;
 }
   
-#mittom{
-    width: 75%;
+#mittom {
+    width: 70%;
     margin: 0 auto;
     display: block;
 }
 
-#utolso{
+#utolso {
     margin-left: 0.5em;
+    display: inline;
+}
+
+#elso, #utolso {
+  display: inline-block;
+}
+
+#kep {
+  width: 95px;
+  transform: scaleX(-1);
+}
+
+#tabla {
+  width: 120px;
+  padding-top:20px ;
+  height: 5em;
+  text-align: center;
+  background-size: cover;
+  background-image: url("../images/sign.png");
 }
